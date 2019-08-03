@@ -11,43 +11,46 @@ import XCTest
 
 class SimplTests: XCTestCase {
 
-    func testSimplAppDelegate() {
+    func testSimplApp() {
+        let simpl = UIApplication.shared as! Simpl
+    
+        // Inject Test data store
+        XCTAssertNil(simpl.store)
+        let testStore = TestStore()
+        simpl.store = testStore
+        
+        // Test app calling `save` when resigning active
+        XCTAssertFalse(testStore.didSave)
+        simpl.willResignActive()
+        XCTAssertTrue(testStore.didSave)
+        
+        // Test app calling `restore` after becoming active
+        XCTAssertFalse(testStore.didRestore)
+        simpl.didBecomeActive()
+        XCTAssertTrue(testStore.didRestore)
+    }
+
+    func testSimplDelegate() {
+        let simpl = UIApplication.shared as! Simpl
+        XCTAssertNil(simpl.delegate) // app should start without delegate in testing
+
         let appDelegate = SimplDelegate()
         XCTAssertNil(appDelegate.simpl) // should not have a reference to application
         
-        let simpl = UIApplication.shared as! Simpl
-        XCTAssertNil(simpl.delegate) // should start out without delegate in testing
-        
-        XCTAssertNil(simpl.store) // should not have a store initially
-        let store = TestStore()
-        simpl.store = store
-
-        // Test app delegate lifecycle
-        
+        // Test app delegate method
         let result = appDelegate.application(simpl, didFinishLaunchingWithOptions: nil)
         XCTAssertTrue(result)
         
         XCTAssertEqual(appDelegate.simpl, simpl) // should reference the same application
-
-        // Test app delegate calling save when resigning active
-        
-        XCTAssertFalse(store.didSave)
-        appDelegate.applicationWillResignActive(simpl)
-        XCTAssertTrue(store.didSave)
-        
-        // Test app delegate calling restore after becoming active
-        
-        XCTAssertFalse(store.didRestore)
-        appDelegate.applicationDidBecomeActive(simpl)
-        XCTAssertTrue(store.didRestore)
     }
 
     func testViewController() {
-        let store = TestStore()
-        let vc = ViewController(store: store)
+        let testStore = TestStore()
+        let viewController = ViewController(store: testStore)
         
-        XCTAssertNil(vc.title)
-        vc.viewDidLoad()
-        XCTAssertEqual(vc.title, "Simpl")
+        XCTAssertNil(viewController.title)
+        viewController.viewDidLoad()
+        XCTAssertEqual(viewController.title, "Simpl")
     }
+    
 }

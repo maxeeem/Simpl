@@ -9,7 +9,7 @@
 import UIKit
 
 class SimplDelegate: UIResponder, UIApplicationDelegate {
-    weak var simpl: Simpl! // weak reference to application
+    var simpl: Simpl! // reference to application
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         simpl = (application as! Simpl)
@@ -18,11 +18,11 @@ class SimplDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        simpl.store.save()
+        simpl.willResignActive()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        simpl.store.restore()
+        simpl.didBecomeActive()
     }
 }
 
