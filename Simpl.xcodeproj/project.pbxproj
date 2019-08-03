@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7ACFD9E422F50B3900429B63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFD9E322F50B3900429B63 /* AppDelegate.swift */; };
+		7ACFD9E422F50B3900429B63 /* SimplDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFD9E322F50B3900429B63 /* SimplDelegate.swift */; };
 		7ACFD9E622F50B3900429B63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFD9E522F50B3900429B63 /* ViewController.swift */; };
-		7ACFD9E922F50B3900429B63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ACFD9E722F50B3900429B63 /* Main.storyboard */; };
 		7ACFD9EB22F50B3B00429B63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ACFD9EA22F50B3B00429B63 /* Assets.xcassets */; };
 		7ACFD9EE22F50B3B00429B63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ACFD9EC22F50B3B00429B63 /* LaunchScreen.storyboard */; };
 		7ACFD9F922F50B3B00429B63 /* SimplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFD9F822F50B3B00429B63 /* SimplTests.swift */; };
+		7ACFDA0422F50BC500429B63 /* Simpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA0322F50BC500429B63 /* Simpl.swift */; };
+		7ACFDA0922F5118200429B63 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA0822F5118200429B63 /* main.swift */; };
+		7ACFDA0E22F5164A00429B63 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA0D22F5164A00429B63 /* DataStore.swift */; };
+		7ACFDA1022F5465600429B63 /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA0F22F5465600429B63 /* TestStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,15 +30,18 @@
 
 /* Begin PBXFileReference section */
 		7ACFD9E022F50B3900429B63 /* Simpl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simpl.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7ACFD9E322F50B3900429B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7ACFD9E322F50B3900429B63 /* SimplDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplDelegate.swift; sourceTree = "<group>"; };
 		7ACFD9E522F50B3900429B63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7ACFD9E822F50B3900429B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7ACFD9EA22F50B3B00429B63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7ACFD9ED22F50B3B00429B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7ACFD9EF22F50B3B00429B63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ACFD9F422F50B3B00429B63 /* SimplTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimplTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ACFD9F822F50B3B00429B63 /* SimplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplTests.swift; sourceTree = "<group>"; };
 		7ACFD9FA22F50B3B00429B63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7ACFDA0322F50BC500429B63 /* Simpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simpl.swift; sourceTree = "<group>"; };
+		7ACFDA0822F5118200429B63 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		7ACFDA0D22F5164A00429B63 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		7ACFDA0F22F5465600429B63 /* TestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +83,13 @@
 		7ACFD9E222F50B3900429B63 /* Simpl */ = {
 			isa = PBXGroup;
 			children = (
-				7ACFD9E322F50B3900429B63 /* AppDelegate.swift */,
+				7ACFDA0322F50BC500429B63 /* Simpl.swift */,
+				7ACFD9E322F50B3900429B63 /* SimplDelegate.swift */,
 				7ACFD9E522F50B3900429B63 /* ViewController.swift */,
-				7ACFD9E722F50B3900429B63 /* Main.storyboard */,
+				7ACFDA0D22F5164A00429B63 /* DataStore.swift */,
 				7ACFD9EA22F50B3B00429B63 /* Assets.xcassets */,
 				7ACFD9EC22F50B3B00429B63 /* LaunchScreen.storyboard */,
+				7ACFDA0822F5118200429B63 /* main.swift */,
 				7ACFD9EF22F50B3B00429B63 /* Info.plist */,
 			);
 			path = Simpl;
@@ -91,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				7ACFD9F822F50B3B00429B63 /* SimplTests.swift */,
+				7ACFDA0F22F5465600429B63 /* TestStore.swift */,
 				7ACFD9FA22F50B3B00429B63 /* Info.plist */,
 			);
 			path = SimplTests;
@@ -179,7 +188,6 @@
 			files = (
 				7ACFD9EE22F50B3B00429B63 /* LaunchScreen.storyboard in Resources */,
 				7ACFD9EB22F50B3B00429B63 /* Assets.xcassets in Resources */,
-				7ACFD9E922F50B3900429B63 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +205,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ACFDA0422F50BC500429B63 /* Simpl.swift in Sources */,
 				7ACFD9E622F50B3900429B63 /* ViewController.swift in Sources */,
-				7ACFD9E422F50B3900429B63 /* AppDelegate.swift in Sources */,
+				7ACFDA0922F5118200429B63 /* main.swift in Sources */,
+				7ACFDA0E22F5164A00429B63 /* DataStore.swift in Sources */,
+				7ACFD9E422F50B3900429B63 /* SimplDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ACFD9F922F50B3B00429B63 /* SimplTests.swift in Sources */,
+				7ACFDA1022F5465600429B63 /* TestStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +233,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7ACFD9E722F50B3900429B63 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7ACFD9E822F50B3900429B63 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7ACFD9EC22F50B3B00429B63 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -367,6 +371,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sample.Simpl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -385,6 +390,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sample.Simpl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
