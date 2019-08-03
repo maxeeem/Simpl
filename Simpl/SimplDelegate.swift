@@ -13,7 +13,7 @@ class SimplDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         simpl = (application as! Simpl)
-        simpl.didFinishLaunchingWithOptions()
+        simpl.didFinishLaunching()
         return true
     }
 

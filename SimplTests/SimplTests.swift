@@ -44,10 +44,28 @@ class SimplTests: XCTestCase {
         XCTAssertEqual(appDelegate.simpl, simpl) // should reference the same application
     }
 
+    func testCoordinator() {
+        let window = UIWindow()
+        let testStore = TestStore()
+        let coordinator = Coordinator(window: window, store: testStore)
+        
+        // Test coordinator launch method
+        XCTAssertNil(window.rootViewController)
+        coordinator.launch()
+        XCTAssertNotNil(window.rootViewController)
+        
+        // Verify view controller hierarchy
+        let navigation = window.rootViewController as? UINavigationController
+        let viewController = navigation?.viewControllers.first as? ViewController
+        XCTAssertNotNil(navigation)
+        XCTAssertNotNil(viewController)
+    }
+    
     func testViewController() {
         let testStore = TestStore()
         let viewController = ViewController(store: testStore)
         
+        // Test view controller method
         XCTAssertNil(viewController.title)
         viewController.viewDidLoad()
         XCTAssertEqual(viewController.title, "Simpl")

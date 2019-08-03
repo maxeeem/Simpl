@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Launch argument passed during Testing
 let TESTING = ProcessInfo.processInfo.arguments.contains("isTesting")
 
 UIApplicationMain(

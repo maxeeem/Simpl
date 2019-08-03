@@ -9,9 +9,11 @@
 import UIKit
 
 class Simpl: UIApplication {
-    let window = UIWindow()
+    private let window = UIWindow()
 
-    var store: DataStore!
+    private var coordinator: Coordinator!
+
+    internal var store: DataStore!
     
     override init() {
         // tests can override properties
@@ -21,12 +23,9 @@ class Simpl: UIApplication {
         super.init()
     }
 
-    func didFinishLaunchingWithOptions() {
-        window.rootViewController = {
-            let viewController = ViewController(store: store)
-            return UINavigationController(rootViewController: viewController)
-        }()
-        window.makeKeyAndVisible()
+    func didFinishLaunching() {
+        coordinator = Coordinator(window: window, store: store)
+        coordinator.launch()
     }
     
     func willResignActive() {

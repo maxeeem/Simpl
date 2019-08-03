@@ -16,6 +16,7 @@
 		7ACFDA0922F5118200429B63 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA0822F5118200429B63 /* main.swift */; };
 		7ACFDA0E22F5164A00429B63 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA0D22F5164A00429B63 /* DataStore.swift */; };
 		7ACFDA1022F5465600429B63 /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA0F22F5465600429B63 /* TestStore.swift */; };
+		7ACFDA1422F6015200429B63 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA1322F6015200429B63 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		7ACFDA0822F5118200429B63 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		7ACFDA0D22F5164A00429B63 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		7ACFDA0F22F5465600429B63 /* TestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStore.swift; sourceTree = "<group>"; };
+		7ACFDA1322F6015200429B63 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				7ACFDA0322F50BC500429B63 /* Simpl.swift */,
 				7ACFD9E322F50B3900429B63 /* SimplDelegate.swift */,
+				7ACFDA1322F6015200429B63 /* Coordinator.swift */,
 				7ACFD9E522F50B3900429B63 /* ViewController.swift */,
 				7ACFDA0D22F5164A00429B63 /* DataStore.swift */,
 				7ACFD9EA22F50B3B00429B63 /* Assets.xcassets */,
@@ -207,6 +210,7 @@
 			files = (
 				7ACFDA0422F50BC500429B63 /* Simpl.swift in Sources */,
 				7ACFD9E622F50B3900429B63 /* ViewController.swift in Sources */,
+				7ACFDA1422F6015200429B63 /* Coordinator.swift in Sources */,
 				7ACFDA0922F5118200429B63 /* main.swift in Sources */,
 				7ACFDA0E22F5164A00429B63 /* DataStore.swift in Sources */,
 				7ACFD9E422F50B3900429B63 /* SimplDelegate.swift in Sources */,
