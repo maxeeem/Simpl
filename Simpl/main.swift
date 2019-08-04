@@ -8,14 +8,12 @@
 
 import UIKit
 
-// Launch argument passed during Testing
-let TESTING = ProcessInfo.processInfo.arguments.contains("isTesting")
+let app = NSStringFromClass(Simpl.self)
 
-UIApplicationMain(
-    CommandLine.argc,
-    CommandLine.unsafeArgv,
-    // app class
-    NSStringFromClass(Simpl.self),
-    // app delegate
-    TESTING ? nil : NSStringFromClass(SimplDelegate.self)
-)
+#if TESTING
+let appDelegate: String? = nil
+#else
+let appDelegate = NSStringFromClass(SimplDelegate.self)
+#endif
+
+UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, app, appDelegate)

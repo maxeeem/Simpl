@@ -16,10 +16,10 @@ class Simpl: UIApplication {
     internal var store: DataStore!
     
     override init() {
-        // tests can override properties
-        if !TESTING {
-            store = DefaultStore()
-        }
+        // tests should set those manually
+        #if !TESTING
+        store = DefaultStore()
+        #endif
         super.init()
     }
 
