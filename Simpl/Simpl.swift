@@ -8,22 +8,20 @@
 
 import UIKit
 
-class Simpl: UIApplication {
-    private let window = UIWindow()
-
-    private var coordinator: Coordinator!
-
-    internal var store: DataStore!
+class Simpl: SimplApp {
     
+    var store: DataStore!
+    var coordinator: Coordinator!
+
     override init() {
-        // tests should set those manually
+        // tests should set these properties manually
         #if !TESTING
         store = DefaultStore()
         #endif
         super.init()
     }
-
-    func didFinishLaunching() {
+    
+    func didFinishLaunching(withOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         coordinator = Coordinator(window: window, store: store)
         coordinator.launch()
     }

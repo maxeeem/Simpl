@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  SimplAppDelegate.swift
 //  Simpl
 //
 //  Created by Maxim VT on 8/2/19.
@@ -8,21 +8,26 @@
 
 import UIKit
 
-class SimplDelegate: UIResponder, UIApplicationDelegate {
-    var simpl: Simpl! // reference to application
+///
+/// Generic AppDelegate for Simpl apps
+///
+/// Assigns `app` variable at launch and forwards system calls to the application
+///
+class SimplAppDelegate<A: SimplAppProtocol>: UIResponder, UIApplicationDelegate {
+    var app: A! // reference to application
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        simpl = (application as! Simpl)
-        simpl.didFinishLaunching()
+        app = (application as! A)
+        app.didFinishLaunching?(withOptions: launchOptions)
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        simpl.willResignActive()
+        app.willResignActive?()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        simpl.didBecomeActive()
+        app.didBecomeActive?()
     }
 }
 

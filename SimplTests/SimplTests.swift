@@ -34,14 +34,14 @@ class SimplTests: XCTestCase {
         let simpl = UIApplication.shared as! Simpl
         XCTAssertNil(simpl.delegate) // app should start without delegate in testing
 
-        let appDelegate = SimplDelegate()
-        XCTAssertNil(appDelegate.simpl) // should not have a reference to application
+        let appDelegate = SimplAppDelegate<Simpl>()
+        XCTAssertNil(appDelegate.app) // should not have a reference to application
         
         // Test app delegate method
         let result = appDelegate.application(simpl, didFinishLaunchingWithOptions: nil)
         XCTAssertTrue(result)
         
-        XCTAssertEqual(appDelegate.simpl, simpl) // should reference the same application
+        XCTAssertEqual(appDelegate.app, simpl) // should reference the same application
     }
 
     func testCoordinator() {

@@ -2,18 +2,16 @@
 //  main.swift
 //  Simpl
 //
-//  Created by Maxim VT on 8/2/19.
+//  Created by Maxim VT on 8/4/19.
 //  Copyright © 2019 Sample. All rights reserved.
 //
 
-import UIKit
+let isTesting: Bool = {
+    #if TESTING
+    return true
+    #else
+    return false
+    #endif
+}()
 
-let app = NSStringFromClass(Simpl.self)
-
-#if TESTING
-let appDelegate: String? = nil
-#else
-let appDelegate = NSStringFromClass(SimplDelegate.self)
-#endif
-
-UIApplicationMain(CommandLine.argc, CommandLine.unsafeArgv, app, appDelegate)
+run(Simpl.self, testing: isTesting)

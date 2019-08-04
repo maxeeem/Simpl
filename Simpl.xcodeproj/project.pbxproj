@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7ACFD9E422F50B3900429B63 /* SimplDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFD9E322F50B3900429B63 /* SimplDelegate.swift */; };
+		7ACFD9E422F50B3900429B63 /* SimplAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFD9E322F50B3900429B63 /* SimplAppDelegate.swift */; };
 		7ACFD9E622F50B3900429B63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFD9E522F50B3900429B63 /* ViewController.swift */; };
 		7ACFD9EB22F50B3B00429B63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ACFD9EA22F50B3B00429B63 /* Assets.xcassets */; };
 		7ACFD9EE22F50B3B00429B63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ACFD9EC22F50B3B00429B63 /* LaunchScreen.storyboard */; };
 		7ACFD9F922F50B3B00429B63 /* SimplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFD9F822F50B3B00429B63 /* SimplTests.swift */; };
 		7ACFDA0422F50BC500429B63 /* Simpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA0322F50BC500429B63 /* Simpl.swift */; };
-		7ACFDA0922F5118200429B63 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA0822F5118200429B63 /* main.swift */; };
+		7ACFDA0922F5118200429B63 /* main_app.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA0822F5118200429B63 /* main_app.swift */; };
 		7ACFDA0E22F5164A00429B63 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA0D22F5164A00429B63 /* DataStore.swift */; };
 		7ACFDA1022F5465600429B63 /* TestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA0F22F5465600429B63 /* TestStore.swift */; };
 		7ACFDA1422F6015200429B63 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA1322F6015200429B63 /* Coordinator.swift */; };
+		7ACFDA1D22F78F7600429B63 /* SimplAppProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA1C22F78F7600429B63 /* SimplAppProtocol.swift */; };
+		7ACFDA1F22F793F400429B63 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA1E22F793F400429B63 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +33,7 @@
 
 /* Begin PBXFileReference section */
 		7ACFD9E022F50B3900429B63 /* Simpl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simpl.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7ACFD9E322F50B3900429B63 /* SimplDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplDelegate.swift; sourceTree = "<group>"; };
+		7ACFD9E322F50B3900429B63 /* SimplAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplAppDelegate.swift; sourceTree = "<group>"; };
 		7ACFD9E522F50B3900429B63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7ACFD9EA22F50B3B00429B63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7ACFD9ED22F50B3B00429B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,10 +42,12 @@
 		7ACFD9F822F50B3B00429B63 /* SimplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplTests.swift; sourceTree = "<group>"; };
 		7ACFD9FA22F50B3B00429B63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ACFDA0322F50BC500429B63 /* Simpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simpl.swift; sourceTree = "<group>"; };
-		7ACFDA0822F5118200429B63 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		7ACFDA0822F5118200429B63 /* main_app.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main_app.swift; sourceTree = "<group>"; };
 		7ACFDA0D22F5164A00429B63 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		7ACFDA0F22F5465600429B63 /* TestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStore.swift; sourceTree = "<group>"; };
 		7ACFDA1322F6015200429B63 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		7ACFDA1C22F78F7600429B63 /* SimplAppProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplAppProtocol.swift; sourceTree = "<group>"; };
+		7ACFDA1E22F793F400429B63 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,14 +90,14 @@
 			isa = PBXGroup;
 			children = (
 				7ACFDA0322F50BC500429B63 /* Simpl.swift */,
-				7ACFD9E322F50B3900429B63 /* SimplDelegate.swift */,
 				7ACFDA1322F6015200429B63 /* Coordinator.swift */,
 				7ACFD9E522F50B3900429B63 /* ViewController.swift */,
 				7ACFDA0D22F5164A00429B63 /* DataStore.swift */,
 				7ACFD9EA22F50B3B00429B63 /* Assets.xcassets */,
 				7ACFD9EC22F50B3B00429B63 /* LaunchScreen.storyboard */,
-				7ACFDA0822F5118200429B63 /* main.swift */,
+				7ACFDA1E22F793F400429B63 /* main.swift */,
 				7ACFD9EF22F50B3B00429B63 /* Info.plist */,
+				7ACFDA1922F78D0700429B63 /* Modules */,
 			);
 			path = Simpl;
 			sourceTree = "<group>";
@@ -106,6 +110,16 @@
 				7ACFD9FA22F50B3B00429B63 /* Info.plist */,
 			);
 			path = SimplTests;
+			sourceTree = "<group>";
+		};
+		7ACFDA1922F78D0700429B63 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7ACFDA0822F5118200429B63 /* main_app.swift */,
+				7ACFD9E322F50B3900429B63 /* SimplAppDelegate.swift */,
+				7ACFDA1C22F78F7600429B63 /* SimplAppProtocol.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,11 +223,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ACFDA0422F50BC500429B63 /* Simpl.swift in Sources */,
+				7ACFDA1D22F78F7600429B63 /* SimplAppProtocol.swift in Sources */,
+				7ACFDA1F22F793F400429B63 /* main.swift in Sources */,
 				7ACFD9E622F50B3900429B63 /* ViewController.swift in Sources */,
 				7ACFDA1422F6015200429B63 /* Coordinator.swift in Sources */,
-				7ACFDA0922F5118200429B63 /* main.swift in Sources */,
+				7ACFDA0922F5118200429B63 /* main_app.swift in Sources */,
 				7ACFDA0E22F5164A00429B63 /* DataStore.swift in Sources */,
-				7ACFD9E422F50B3900429B63 /* SimplDelegate.swift in Sources */,
+				7ACFD9E422F50B3900429B63 /* SimplAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
