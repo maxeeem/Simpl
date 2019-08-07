@@ -6,12 +6,8 @@
 //  Copyright © 2019 Sample. All rights reserved.
 //
 
-let isTesting: Bool = {
-    #if TESTING
-    return true
-    #else
-    return false
-    #endif
-}()
-
-run(Simpl.self, testing: isTesting)
+#if TESTING // launches app with nil AppDelegate
+test(Simpl.self)
+#else
+run(Simpl.self)
+#endif

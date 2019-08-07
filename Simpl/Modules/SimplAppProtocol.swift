@@ -7,17 +7,28 @@
 //
 
 import UIKit
+import os.log
 
 /// Protocol for Simpl application
-@objc protocol SimplAppProtocol where Self: UIApplication {
+protocol SimplAppProtocol: class {
     var window: UIWindow { get }
     
-    @objc optional func didFinishLaunching(withOptions: [UIApplication.LaunchOptionsKey: Any]?)
-    @objc optional func willResignActive()
-    @objc optional func didBecomeActive()
+    func didFinishLaunching(withOptions: [UIApplication.LaunchOptionsKey: Any]?)
+    func willResignActive()
+    func didBecomeActive()
 }
 
 /// Base class for Simpl application
 class SimplApp: UIApplication, SimplAppProtocol {
     let window = UIWindow()
+    
+    func didFinishLaunching(withOptions: [UIApplication.LaunchOptionsKey : Any]?) {
+        os_log(.info, "didFinishLaunching")
+    }
+    func willResignActive() {
+        os_log(.info, "willResignActive")
+    }
+    func didBecomeActive() {
+        os_log(.info, "didBecomeActive")
+    }
 }

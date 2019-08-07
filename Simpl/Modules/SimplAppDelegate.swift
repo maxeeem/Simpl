@@ -18,16 +18,16 @@ class SimplAppDelegate<A: SimplAppProtocol>: UIResponder, UIApplicationDelegate 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         app = (application as! A)
-        app.didFinishLaunching?(withOptions: launchOptions)
+        app.didFinishLaunching(withOptions: launchOptions)
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        app.willResignActive?()
+        app.willResignActive()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        app.didBecomeActive?()
+        app.didBecomeActive()
     }
 }
 

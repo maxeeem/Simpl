@@ -21,16 +21,19 @@ class Simpl: SimplApp {
         super.init()
     }
     
-    func didFinishLaunching(withOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+    override func didFinishLaunching(withOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        super.didFinishLaunching(withOptions: launchOptions)
         coordinator = Coordinator(window: window, store: store)
         coordinator.launch()
     }
     
-    func willResignActive() {
+    override func willResignActive() {
+        super.willResignActive()
         store.save()
     }
     
-    func didBecomeActive() {
+    override func didBecomeActive() {
+        super.didBecomeActive()
         store.restore()
     }
 }
