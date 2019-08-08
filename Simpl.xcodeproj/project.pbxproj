@@ -19,6 +19,8 @@
 		7ACFDA1422F6015200429B63 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA1322F6015200429B63 /* Coordinator.swift */; };
 		7ACFDA1D22F78F7600429B63 /* SimplAppProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA1C22F78F7600429B63 /* SimplAppProtocol.swift */; };
 		7ACFDA1F22F793F400429B63 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA1E22F793F400429B63 /* main.swift */; };
+		7ACFDA2122FBE02B00429B63 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ACFDA2022FBE02B00429B63 /* View.xib */; };
+		7ACFDA2322FBE09700429B63 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDA2222FBE09700429B63 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		7ACFDA1322F6015200429B63 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7ACFDA1C22F78F7600429B63 /* SimplAppProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplAppProtocol.swift; sourceTree = "<group>"; };
 		7ACFDA1E22F793F400429B63 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		7ACFDA2022FBE02B00429B63 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		7ACFDA2222FBE09700429B63 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 				7ACFDA0322F50BC500429B63 /* Simpl.swift */,
 				7ACFDA1322F6015200429B63 /* Coordinator.swift */,
 				7ACFD9E522F50B3900429B63 /* ViewController.swift */,
+				7ACFDA2422FBE3D700429B63 /* Views */,
 				7ACFDA0D22F5164A00429B63 /* DataStore.swift */,
 				7ACFD9EA22F50B3B00429B63 /* Assets.xcassets */,
 				7ACFD9EC22F50B3B00429B63 /* LaunchScreen.storyboard */,
@@ -120,6 +125,15 @@
 				7ACFDA1C22F78F7600429B63 /* SimplAppProtocol.swift */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		7ACFDA2422FBE3D700429B63 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7ACFDA2222FBE09700429B63 /* View.swift */,
+				7ACFDA2022FBE02B00429B63 /* View.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ACFD9EE22F50B3B00429B63 /* LaunchScreen.storyboard in Resources */,
+				7ACFDA2122FBE02B00429B63 /* View.xib in Resources */,
 				7ACFD9EB22F50B3B00429B63 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +242,7 @@
 				7ACFDA1F22F793F400429B63 /* main.swift in Sources */,
 				7ACFD9E622F50B3900429B63 /* ViewController.swift in Sources */,
 				7ACFDA1422F6015200429B63 /* Coordinator.swift in Sources */,
+				7ACFDA2322FBE09700429B63 /* View.swift in Sources */,
 				7ACFDA0922F5118200429B63 /* main_app.swift in Sources */,
 				7ACFDA0E22F5164A00429B63 /* DataStore.swift in Sources */,
 				7ACFD9E422F50B3900429B63 /* SimplAppDelegate.swift in Sources */,

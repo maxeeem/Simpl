@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    weak var coordinator: Coordinator?
+    
     let store: DataStore
     
     init(store: DataStore) {
@@ -20,9 +22,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         title = "Simpl"
-        
-        view.backgroundColor = UIColor.groupTableViewBackground
     }
 }

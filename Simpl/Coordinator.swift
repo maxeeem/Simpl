@@ -20,6 +20,7 @@ class Coordinator {
     func launch() {
         window.rootViewController = {
             let viewController = ViewController(store: store)
+            viewController.coordinator = self
             return UINavigationController(rootViewController: viewController)
         }()
         window.makeKeyAndVisible()
