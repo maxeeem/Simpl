@@ -20,7 +20,7 @@ protocol SimplAppProtocol: class {
 
 /// Base class for Simpl application
 class SimplApp: UIApplication, SimplAppProtocol {
-    let window = UIWindow()
+    lazy var window = UIWindow()
     
     func didFinishLaunching(withOptions: [UIApplication.LaunchOptionsKey : Any]?) {
         os_log(.info, "didFinishLaunching")
