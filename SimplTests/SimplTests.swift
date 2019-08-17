@@ -10,38 +10,37 @@ import XCTest
 @testable import Simpl
 
 class SimplTests: XCTestCase {
+    
+    var simpl: Simpl { return UIApplication.shared as! Simpl }
+    
+    let testStore = TestStore()
+
+    override func setUp() {
+        super.setUp()
+        // Inject Test data store
+        simpl.store = testStore
+    }
 
     func testSimplApp() {
-        let simpl = UIApplication.shared as! Simpl
-    
-        // Inject Test data store
-        XCTAssertNil(simpl.store)
-        let testStore = TestStore()
-        simpl.store = testStore
-        
         // Test app calling `save` when resigning active
         XCTAssertFalse(testStore.didSave)
-        simpl.willResignActive()
+        simpl.applicationWillResignActive(simpl)
         XCTAssertTrue(testStore.didSave)
         
         // Test app calling `restore` after becoming active
         XCTAssertFalse(testStore.didRestore)
-        simpl.didBecomeActive()
+        simpl.applicationDidBecomeActive(.shared)
         XCTAssertTrue(testStore.didRestore)
     }
 
-    func testSimplDelegate() {
-        let simpl = UIApplication.shared as! Simpl
-        XCTAssertNil(simpl.delegate) // app should start without delegate in testing
-
-        let appDelegate = SimplAppDelegate<Simpl>()
-        XCTAssertNil(appDelegate.app) // should not have a reference to application
+    func testAppWindow() {
+        XCTAssertNil(simpl.window) // should start out without a window
         
         // Test app delegate method
-        let result = appDelegate.application(simpl, didFinishLaunchingWithOptions: nil)
+        simpl.delegate = simpl
+        let result = simpl.application(.shared, didFinishLaunchingWithOptions: nil)
         XCTAssertTrue(result)
-        
-        XCTAssertEqual(appDelegate.app, simpl) // should reference the same application
+        XCTAssertNotNil(simpl.window)
     }
 
     func testCoordinator() {

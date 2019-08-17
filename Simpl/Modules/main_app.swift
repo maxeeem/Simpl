@@ -14,7 +14,7 @@ import UIKit
 /// - Parameters:
 ///   - appClass: Main App class
 ///   - delegate: AppDelegate class
-func run<A,B>(_ appClass: A.Type, _ delegateClass: B.Type) where A: SimplAppProtocol, B: UIResponder & UIApplicationDelegate {
+func run<A,B>(_ appClass: A.Type, _ delegateClass: B.Type) where A: UIApplication, B: UIApplicationDelegate {
     UIApplicationMain(
         CommandLine.argc,
         CommandLine.unsafeArgv,
@@ -26,30 +26,18 @@ func run<A,B>(_ appClass: A.Type, _ delegateClass: B.Type) where A: SimplAppProt
 }
 
 /// Creates and launches UIApplicationMain
-/// Uses default SimplAppDelegate
+/// Uses app object for delegate
 ///
 /// - Parameters:
 ///   - appClass: Main App class
-func run<A>(_ appClass: A.Type) where A: SimplAppProtocol {
-    UIApplicationMain(
-        CommandLine.argc,
-        CommandLine.unsafeArgv,
-        // app class
-        NSStringFromClass(appClass),
-        // app delegate
-        NSStringFromClass(SimplAppDelegate<A>.self)
-    )
+func run<A>(_ appClass: A.Type) where A: UIApplication & UIApplicationDelegate {
+    run(appClass, appClass)
 }
 
 /// Creates and launches UIApplicationMain
-/// Sets AppDelegate to nil for testing
+/// Uses SimplDelegate
 ///
 /// - Parameter appClass: Main App class
-func test<A>(_ appClass: A.Type) where A: SimplAppProtocol {
-    UIApplicationMain(
-        CommandLine.argc,
-        CommandLine.unsafeArgv,
-        // app class & app delegate (nil)
-        NSStringFromClass(appClass), nil
-    )
+func test<A>(_ appClass: A.Type) where A: UIApplication {
+    run(appClass, SimplDelegate.self)
 }

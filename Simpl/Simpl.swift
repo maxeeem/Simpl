@@ -7,33 +7,38 @@
 //
 
 import UIKit
+import os.log
 
 class Simpl: SimplApp {
-    
+
     var store: DataStore!
     var coordinator: Coordinator!
 
+    // tests should set dependencies manually
     override init() {
-        // tests should set these properties manually
         #if !TESTING
         store = DefaultStore()
         #endif
         super.init()
     }
-    
-    override func didFinishLaunching(withOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        super.didFinishLaunching(withOptions: launchOptions)
-        coordinator = Coordinator(window: window, store: store)
+}
+
+extension Simpl {
+    override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        let result = super.application(application, didFinishLaunchingWithOptions: launchOptions)
+        coordinator = Coordinator(window: window!, store: store)
         coordinator.launch()
+        os_log(.info, "Coordinator launched")
+        return result
     }
     
-    override func willResignActive() {
-        super.willResignActive()
+    override func applicationWillResignActive(_ application: UIApplication) {
+        super.applicationWillResignActive(application)
         store.save()
     }
     
-    override func didBecomeActive() {
-        super.didBecomeActive()
+    override func applicationDidBecomeActive(_ application: UIApplication) {
+        super.applicationDidBecomeActive(application)
         store.restore()
     }
 }
