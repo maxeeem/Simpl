@@ -1,5 +1,5 @@
 //
-//  App.swift
+//  AppDelegate.swift
 //  Simpl
 //
 //  Created by Maxim VT on 8/2/19.
@@ -9,24 +9,28 @@
 import UIKit
 import os.log
 
-class Simpl: SimplApp {
-
-    var store: DataStore!
-    var coordinator: Coordinator!
-
-    // tests should set dependencies manually
+class AppDelegate: BaseAppDelegate {
+    
+    private let store: DataStore
+    private var coordinator: Coordinator!
+    
     override init() {
-        #if !TESTING
-        store = DefaultStore()
-        #endif
+        self.store = DefaultStore()
         super.init()
     }
-}
-
-extension Simpl {
+    
+    internal init(store: DataStore, coordinator: Coordinator?) {
+        self.store = store
+        self.coordinator = coordinator
+        super.init()
+    }
+    
     override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         let result = super.application(application, didFinishLaunchingWithOptions: launchOptions)
-        coordinator = Coordinator(window: window!, store: store)
+        window = UIWindow()
+        if coordinator == nil {
+            coordinator = Coordinator(window: window!, store: store)
+        }
         coordinator.launch()
         os_log(.info, "Coordinator launched")
         return result

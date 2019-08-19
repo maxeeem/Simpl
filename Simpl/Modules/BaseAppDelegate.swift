@@ -1,5 +1,5 @@
 //
-//  SimplApp.swift
+//  BaseAppDelegate.swift
 //  Simpl
 //
 //  Created by Maxim VT on 8/4/19.
@@ -9,18 +9,13 @@
 import UIKit
 import os.log
 
-/// Base class for Simpl application
-
-class SimplApp: UIApplication {
-    var window: UIWindow?
-}
-
 /// Shared logic
 
-extension SimplApp: UIApplicationDelegate {
+class BaseAppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         os_log(.info, "didFinishLaunching")
-        window = UIWindow()
         return true
     }
     func applicationWillResignActive(_ application: UIApplication) {

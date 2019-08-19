@@ -11,36 +11,26 @@ import XCTest
 
 class SimplTests: XCTestCase {
     
-    var simpl: Simpl { return UIApplication.shared as! Simpl }
-    
-    let testStore = TestStore()
-
-    override func setUp() {
-        super.setUp()
-        // Inject Test data store
-        simpl.store = testStore
-    }
-
-    func testSimplApp() {
+    func testAppDelegate() {
+        let window = UIWindow()
+        let testStore = TestStore()
+        let coordinator = Coordinator(window: window, store: testStore)
+        let simpl = AppDelegate(store: testStore, coordinator: coordinator)
+        
+        // Test app calling coordinator.launch() after app finished launching
+        XCTAssertNil(window.rootViewController)
+        _ = simpl.application(.shared, didFinishLaunchingWithOptions: nil)
+        XCTAssertNotNil(window.rootViewController)
+        
         // Test app calling `save` when resigning active
         XCTAssertFalse(testStore.didSave)
-        simpl.applicationWillResignActive(simpl)
+        simpl.applicationWillResignActive(.shared)
         XCTAssertTrue(testStore.didSave)
         
         // Test app calling `restore` after becoming active
         XCTAssertFalse(testStore.didRestore)
         simpl.applicationDidBecomeActive(.shared)
         XCTAssertTrue(testStore.didRestore)
-    }
-
-    func testAppWindow() {
-        XCTAssertNil(simpl.window) // should start out without a window
-        
-        // Test app delegate method
-        simpl.delegate = simpl
-        let result = simpl.application(.shared, didFinishLaunchingWithOptions: nil)
-        XCTAssertTrue(result)
-        XCTAssertNotNil(simpl.window)
     }
 
     func testCoordinator() {
